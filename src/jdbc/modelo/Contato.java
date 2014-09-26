@@ -6,6 +6,7 @@
 
 package jdbc.modelo;
 
+import java.util.Calendar;
 import java.util.Date;
 
 
@@ -19,8 +20,12 @@ public class Contato {
     private String nome;
     private String email;
     private String endereco;
-    private Date dtNascimento;
+    private Calendar dtNascimento;
 
+    public Contato(){
+        System.out.println("Construtor Contato");
+    }
+    
     public Long getId() {
         return id;
     }
@@ -53,11 +58,11 @@ public class Contato {
         this.endereco = endereco;
     }
 
-    public Date getDtNascimento() {
+    public Calendar getDtNascimento() {
         return dtNascimento;
     }
 
-    public void setDtNascimento(Date dtNascimento) {
+    public void setDtNascimento(Calendar dtNascimento) {
         this.dtNascimento = dtNascimento;
     }
 

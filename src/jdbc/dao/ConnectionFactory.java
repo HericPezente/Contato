@@ -16,12 +16,24 @@ import java.sql.SQLException;
  */
 public class ConnectionFactory {
     
-    public Connection getConnection(){
+    /*public Connection getConnection(){
         try{
         return DriverManager.getConnection("jdbc:derby://localhost:1527/Funcionario;create=true","admin","admin");
         }catch(SQLException e){
             throw new RuntimeException(e);
         }
+    }*/
+    
+    public Connection getConnection(){
+       try{
+           Class.forName("org.apache.derby.jdbc.ClientDriver");
+           return DriverManager.getConnection("jdbc:derby://localhost:1527/contatos; create=true","admin","admin");
+           
+       }catch(SQLException e){
+           throw  new RuntimeException(e);
+       }catch(ClassNotFoundException ex){
+           throw new RuntimeException(ex);
+       }
     }
     
 }

@@ -20,7 +20,7 @@ public class TestaConnection {
         Connection connection=null;
         try{
             connection= new ConnectionFactory().getConnection();
-            System.out.println("Conexao aberta");
+            System.out.println("Conexao aberta!");
         }catch(RuntimeException e){
             
             e.printStackTrace();
